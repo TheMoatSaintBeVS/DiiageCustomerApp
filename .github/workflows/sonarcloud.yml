@@ -40,7 +40,7 @@ jobs:
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # commit 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # commit #commit from VS
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"newmicgi_newmicgi2" /o:"newmicgi" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
