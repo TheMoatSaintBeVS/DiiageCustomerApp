@@ -1,4 +1,4 @@
-name: sonarcloud # case sensitive? 
+name: sonarcloud # it's not case sensitive? 
 on:
   push:
     branches:
