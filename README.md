@@ -1,4 +1,4 @@
-# Utilisation de SonarCloud avec GitHub dans une CI/CD (40 minutes)
+# Utilisation de SonarCloud avec GitHub dans une CI/CD (40 minutes) test
 
 ## Prérequis matériels et logiciels
 
