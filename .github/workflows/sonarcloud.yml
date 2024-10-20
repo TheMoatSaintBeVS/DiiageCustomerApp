@@ -51,7 +51,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # commit #commit from VS
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"TheMoatSaintBeVS_DiiageCustomerApp" /o:"TheMoatSaintBeVS" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"TheMoatSaintBeVS_DiiageCustomerApp" /o:"TheMoatSaintBeVS" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"  /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
           dotnet build src/Caltech.StudentInfoProject.WebUi/.
-          dotnet-coverage collect "dotnet test src/Caltech.StudentInfoProject.WebUi/" -f xml -o "coverage.xml"
+          dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
