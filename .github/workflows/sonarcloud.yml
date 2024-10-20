@@ -41,6 +41,10 @@ jobs:
         shell: pwsh
         run: |
           dotnet tool install --global dotnet-coverage
+      - name: Check .sonarqube folder # pour SonarQubeAnalysisConfig.xml 
+        shell: powershell
+        run: |
+          Get-ChildItem -Recurse .\.sonarqube
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
